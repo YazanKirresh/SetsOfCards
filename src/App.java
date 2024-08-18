@@ -1,10 +1,14 @@
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map.Entry;
+import java.util.Iterator;
+import java.util.Map;
 
 public class App {
     public static int FindHowManyCardSets(String [][] arrayOfCards  ) {
         int amountOfSets = 0;
         int duplicate = 0;
+        int removed =0;
         HashMap<String, Integer> SetOfSpades = new HashMap<>();
         HashMap<String, Integer> SetOfClubs = new HashMap<>();
         HashMap<String, Integer> SetOfDiamonds = new HashMap<>();
@@ -60,18 +64,20 @@ public class App {
                     break;
                 }
             }   
+        System.out.println("Spades cards:"+ SetOfSpades);
+        System.out.println("Clubs cards:"+ SetOfClubs);
+        System.out.println("Diamond cards:"+ SetOfDiamonds);
+        System.out.println("Hearts cards:"+ SetOfHearts);
         if (SetOfSpades.size() == 13 && SetOfClubs.size() == 13 && SetOfDiamonds.size() == 13 && SetOfHearts.size() == 13 ){
+            // We can create at least one set of cards
             amountOfSets++;
-            // We can create at least a set of cards
+
         }
         System.out.println("Spades cards:"+ SetOfSpades);
-        //System.out.println(SetOfSpades.size());
         System.out.println("Clubs cards:"+ SetOfClubs);
-        //System.out.println(SetOfClubs.size());
         System.out.println("Diamond cards:"+ SetOfDiamonds);
-        //System.out.println(SetOfDiamonds.size());
         System.out.println("Hearts cards:"+ SetOfHearts);
-        //System.out.println(SetOfHearts.size());
+
         return amountOfSets;
     }
 
@@ -238,8 +244,10 @@ public class App {
         int cardSets = FindHowManyCardSets(myCards);
         if (cardSets != 0) {
             System.out.println("From the provided cards we can create " + cardSets +" sets of cards ");    
+        }else if (cardSets == 1){
+            System.out.println("From the provided cards we can create one set of cards");
         }else{
-            System.out.println("From the provided cards we cannot create any card set ;(");
+            System.out.println("From the provided cards we cannot create any set of cards ;(");
         }
     }
 }
