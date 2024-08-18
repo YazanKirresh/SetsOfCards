@@ -1,18 +1,14 @@
-## Getting Started
+## Return the amount of Sets of cards
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Given an input of a 2d array, that have the following structre:
+{"0", "S"}
+{"1", "H"}
+{"7", "D"}
+{"10", "C"}
 
-## Folder Structure
+The First value represent the number of the card, this value ranges between 0-12
+The second value represent the type of the card, this value is one of the following: S, H, D, C
 
-The workspace contains two folders by default, where:
+Given the above infomration we have to write a code that checks and returns the amount of sets of cards we can create from the provided array.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
