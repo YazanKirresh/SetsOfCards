@@ -1,14 +1,10 @@
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Map.Entry;
-import java.util.Iterator;
-import java.util.Map;
+
 
 public class App {
     public static int FindHowManyCardSets(String [][] arrayOfCards  ) {
         int amountOfSets = 0;
         int duplicate = 0;
-        int removed =0;
         HashMap<String, Integer> SetOfSpades = new HashMap<>();
         HashMap<String, Integer> SetOfClubs = new HashMap<>();
         HashMap<String, Integer> SetOfDiamonds = new HashMap<>();
@@ -20,14 +16,8 @@ public class App {
                     if (SetOfSpades.containsKey(arrayOfCards[i][0])){
                         // we already have it this card, we need to increment the second value value of the map
                         duplicate = SetOfSpades.get(arrayOfCards[i][0]);
-                        //System.out.println("Current: "+ arrayOfCards[i][0]);
-                            //System.out.println("Spades cards:"+ SetOfSpades);
-                            //System.out.println("Duplicates: "+ duplicate);
                         duplicate++;
-                            //System.out.println("Duplicates: "+ duplicate);
                         SetOfSpades.replace(arrayOfCards[i][0],duplicate);
-                        //System.out.println("Spades cards:"+ SetOfSpades);
-
                     }else{
                         SetOfSpades.put(arrayOfCards[i][0],1);
                     }
@@ -64,10 +54,6 @@ public class App {
                     break;
                 }
             }   
-        System.out.println("Spades cards:"+ SetOfSpades);
-        System.out.println("Clubs cards:"+ SetOfClubs);
-        System.out.println("Diamond cards:"+ SetOfDiamonds);
-        System.out.println("Hearts cards:"+ SetOfHearts);
         if (SetOfSpades.size() == 13 && SetOfClubs.size() == 13 && SetOfDiamonds.size() == 13 && SetOfHearts.size() == 13 ){
             // We can create at least one set of cards
             amountOfSets++;
