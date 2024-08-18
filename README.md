@@ -1,4 +1,4 @@
-## Return the amount of Sets of cards
+## Return the how many Sets of cards we can created from an array
 
 Given an input of a 2d array, that have the following structre:
 {"0", "S"}
