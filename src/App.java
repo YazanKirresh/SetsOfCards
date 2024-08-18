@@ -39,9 +39,9 @@ public class App {
                     }
                     break;
                 case "D":
-                    if (SetOfDiamonds.containsKey(arrayOfCards[i][j])){
+                    if (SetOfDiamonds.containsKey(arrayOfCards[i][0])){
                         // we already have it this card, we need to increment the second value value of the map
-                        duplicate = SetOfDiamonds.get(arrayOfCards[i][j]);
+                        duplicate = SetOfDiamonds.get(arrayOfCards[i][0]);
                         duplicate++;
                         SetOfDiamonds.replace(arrayOfCards[i][0],duplicate);
                     }else{
@@ -49,9 +49,9 @@ public class App {
                     }
                     break;
                 case "H":
-                    if (SetOfHearts.containsKey(arrayOfCards[i][j])){
+                    if (SetOfHearts.containsKey(arrayOfCards[i][0])){
                         // we already have it this card, we need to increment the second value value of the map
-                        duplicate = SetOfHearts.get(arrayOfCards[i][j]);
+                        duplicate = SetOfHearts.get(arrayOfCards[i][0]);
                         duplicate++;
                         SetOfHearts.replace(arrayOfCards[i][0],duplicate);
                     }else{
@@ -129,7 +129,110 @@ public class App {
             {"12", "H"},
             {"12", "D"},
             {"12", "C"},
-
+            {"0", "S"},
+            {"0", "H"},
+            {"0", "D"},
+            {"0", "C"},
+            {"1", "S"},
+            {"1", "H"},
+            {"1", "D"},
+            {"1", "C"},
+            {"2", "S"},
+            {"2", "H"},
+            {"2", "D"},
+            {"2", "C"},
+            {"3", "S"},
+            {"3", "H"},
+            {"3", "D"},
+            {"3", "C"},
+            {"4", "S"},
+            {"4", "H"},
+            {"4", "D"},
+            {"4", "C"},
+            {"5", "S"},
+            {"5", "H"},
+            {"5", "D"},
+            {"5", "C"},
+            {"6", "S"},
+            {"6", "H"},
+            {"6", "D"},
+            {"6", "C"},
+            {"7", "S"},
+            {"7", "H"},
+            {"7", "D"},
+            {"7", "C"},
+            {"8", "S"},
+            {"8", "H"},
+            {"8", "D"},
+            {"8", "C"},
+            {"9", "S"},
+            {"9", "H"},
+            {"9", "D"},
+            {"9", "C"},
+            {"10", "S"},
+            {"10", "H"},
+            {"10", "D"},
+            {"10", "C"},
+            {"11", "S"},
+            {"11", "H"},
+            {"11", "D"},
+            {"11", "C"},
+            {"12", "S"},
+            {"12", "H"},
+            {"12", "D"},
+            {"12", "C"},
+            {"0", "S"},
+            {"0", "H"},
+            {"0", "D"},
+            {"0", "C"},
+            {"1", "S"},
+            {"1", "H"},
+            {"1", "D"},
+            {"1", "C"},
+            {"2", "S"},
+            {"2", "H"},
+            {"2", "D"},
+            {"2", "C"},
+            {"3", "S"},
+            {"3", "H"},
+            {"3", "D"},
+            {"3", "C"},
+            {"4", "S"},
+            {"4", "H"},
+            {"4", "D"},
+            {"4", "C"},
+            {"5", "S"},
+            {"5", "H"},
+            {"5", "D"},
+            {"5", "C"},
+            {"6", "S"},
+            {"6", "H"},
+            {"6", "D"},
+            {"6", "C"},
+            {"7", "S"},
+            {"7", "H"},
+            {"7", "D"},
+            {"7", "C"},
+            {"8", "S"},
+            {"8", "H"},
+            {"8", "D"},
+            {"8", "C"},
+            {"9", "S"},
+            {"9", "H"},
+            {"9", "D"},
+            {"9", "C"},
+            {"10", "S"},
+            {"10", "H"},
+            {"10", "D"},
+            {"10", "C"},
+            {"11", "S"},
+            {"11", "H"},
+            {"11", "D"},
+            {"11", "C"},
+            {"12", "S"},
+            {"12", "H"},
+            {"12", "D"},
+            {"12", "C"},
         };
         // input is two dimensional array
         int cardSets = FindHowManyCardSets(myCards);
