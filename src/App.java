@@ -1,9 +1,11 @@
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 
 
 public class App {
     public static int FindHowManyCardSets(String [][] arrayOfCards  ) {
-        int amountOfSets = 0;
+        int MaxAmountOfSets = 0;
         int duplicate = 0;
         HashMap<String, Integer> SetOfSpades = new HashMap<>();
         HashMap<String, Integer> SetOfClubs = new HashMap<>();
@@ -60,15 +62,20 @@ public class App {
             }   
         if (SetOfSpades.size() == 13 && SetOfClubs.size() == 13 && SetOfDiamonds.size() == 13 && SetOfHearts.size() == 13 ){
             // We can create at least one set of cards
-            amountOfSets++;
-
+            Integer spadesMaxAmountOfSets = Collections.min(SetOfSpades.values());
+            Integer clubesMaxAmountOfSets = Collections.min(SetOfClubs.values());
+            Integer diamondsMaxAmountOfSets = Collections.min(SetOfDiamonds.values());
+            Integer heartsMaxAmountOfSets = Collections.min(SetOfHearts.values());
+            MaxAmountOfSets = Math.min(Math.min(spadesMaxAmountOfSets, clubesMaxAmountOfSets), Math.min(diamondsMaxAmountOfSets, heartsMaxAmountOfSets));
         }
+        System.out.println("The map consists of the following:");
         System.out.println("Spades cards:"+ SetOfSpades);
         System.out.println("Clubs cards:"+ SetOfClubs);
         System.out.println("Diamond cards:"+ SetOfDiamonds);
         System.out.println("Hearts cards:"+ SetOfHearts);
+        
 
-        return amountOfSets;
+        return MaxAmountOfSets;
     }
 
     public static void main(String[] args) throws Exception { 
@@ -231,6 +238,7 @@ public class App {
             {"12", "C"},
         };
         int cardSets = FindHowManyCardSets(myCards);
+        System.out.println("\n\n-------------------------------------------------------------");
         if (cardSets != 0) {
             System.out.println("From the provided cards we can create " + cardSets +" sets of cards ");    
         }else if (cardSets == 1){
@@ -238,5 +246,6 @@ public class App {
         }else{
             System.out.println("From the provided cards we cannot create any set of cards ;(");
         }
+        System.out.println("-------------------------------------------------------------\n\n");
     }
 }
