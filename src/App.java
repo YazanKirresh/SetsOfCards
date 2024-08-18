@@ -9,12 +9,12 @@ public class App {
         HashMap<String, Integer> SetOfClubs = new HashMap<>();
         HashMap<String, Integer> SetOfDiamonds = new HashMap<>();
         HashMap<String, Integer> SetOfHearts = new HashMap<>();
-        //each map will contain the number and how many duplicates do we have of it
+        // Each map will contain the number and how many duplicates do we have of it
         for (int i = 0; i < arrayOfCards.length; ++i) {
             switch (arrayOfCards[i][1]){
                 case "S":
                     if (SetOfSpades.containsKey(arrayOfCards[i][0])){
-                        // we already have it this card, we need to increment the second value value of the map
+                        // We already have this card, we need to increment the second value value of the map
                         duplicate = SetOfSpades.get(arrayOfCards[i][0]);
                         duplicate++;
                         SetOfSpades.replace(arrayOfCards[i][0],duplicate);
@@ -24,7 +24,7 @@ public class App {
                     break;
                 case "C":
                     if (SetOfClubs.containsKey(arrayOfCards[i][0])){
-                        // we already have it this card, we need to increment the second value value of the map
+                        // We already have this card, we need to increment the second value value of the map
                         duplicate = SetOfClubs.get(arrayOfCards[i][0]);
                         duplicate++;
                         SetOfClubs.replace(arrayOfCards[i][0],duplicate);
@@ -34,7 +34,7 @@ public class App {
                     break;
                 case "D":
                     if (SetOfDiamonds.containsKey(arrayOfCards[i][0])){
-                        // we already have it this card, we need to increment the second value value of the map
+                        // We already have this card, we need to increment the second value value of the map
                         duplicate = SetOfDiamonds.get(arrayOfCards[i][0]);
                         duplicate++;
                         SetOfDiamonds.replace(arrayOfCards[i][0],duplicate);
@@ -44,7 +44,7 @@ public class App {
                     break;
                 case "H":
                     if (SetOfHearts.containsKey(arrayOfCards[i][0])){
-                        // we already have it this card, we need to increment the second value value of the map
+                        // We already have this card, we need to increment the second value value of the map
                         duplicate = SetOfHearts.get(arrayOfCards[i][0]);
                         duplicate++;
                         SetOfHearts.replace(arrayOfCards[i][0],duplicate);
@@ -52,7 +52,11 @@ public class App {
                         SetOfHearts.put(arrayOfCards[i][0],1);
                     }
                     break;
+                default:
+                    System.out.println("Invalid input!");
+                    System.out.println("It will be ignored");
                 }
+                
             }   
         if (SetOfSpades.size() == 13 && SetOfClubs.size() == 13 && SetOfDiamonds.size() == 13 && SetOfHearts.size() == 13 ){
             // We can create at least one set of cards
@@ -226,7 +230,6 @@ public class App {
             {"12", "D"},
             {"12", "C"},
         };
-        // input is two dimensional array
         int cardSets = FindHowManyCardSets(myCards);
         if (cardSets != 0) {
             System.out.println("From the provided cards we can create " + cardSets +" sets of cards ");    
