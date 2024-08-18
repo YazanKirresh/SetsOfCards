@@ -16,13 +16,13 @@ public class App {
                     if (SetOfSpades.containsKey(arrayOfCards[i][0])){
                         // we already have it this card, we need to increment the second value value of the map
                         duplicate = SetOfSpades.get(arrayOfCards[i][0]);
-                        System.out.println("Current: "+ arrayOfCards[i][0]);
+                        //System.out.println("Current: "+ arrayOfCards[i][0]);
                             //System.out.println("Spades cards:"+ SetOfSpades);
                             //System.out.println("Duplicates: "+ duplicate);
                         duplicate++;
                             //System.out.println("Duplicates: "+ duplicate);
                         SetOfSpades.replace(arrayOfCards[i][0],duplicate);
-                        System.out.println("Spades cards:"+ SetOfSpades);
+                        //System.out.println("Spades cards:"+ SetOfSpades);
 
                     }else{
                         SetOfSpades.put(arrayOfCards[i][0],1);
@@ -65,13 +65,13 @@ public class App {
             // We can create at least a set of cards
         }
         System.out.println("Spades cards:"+ SetOfSpades);
-        System.out.println(SetOfSpades.size());
+        //System.out.println(SetOfSpades.size());
         System.out.println("Clubs cards:"+ SetOfClubs);
-        System.out.println(SetOfClubs.size());
+        //System.out.println(SetOfClubs.size());
         System.out.println("Diamond cards:"+ SetOfDiamonds);
-        System.out.println(SetOfDiamonds.size());
+        //System.out.println(SetOfDiamonds.size());
         System.out.println("Hearts cards:"+ SetOfHearts);
-        System.out.println(SetOfHearts.size());
+        //System.out.println(SetOfHearts.size());
         return amountOfSets;
     }
 
