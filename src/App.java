@@ -11,58 +11,55 @@ public class App {
         HashMap<String, Integer> SetOfHearts = new HashMap<>();
         //each map will contain the number and how many duplicates do we have of it
         for (int i = 0; i < arrayOfCards.length; ++i) {
-            for (int j = 0; j < arrayOfCards[i].length; ++j) {
-                switch (arrayOfCards[i][1]){
-                    case "S":
-                        if (SetOfSpades.containsKey(arrayOfCards[i][j])){
-                            // we already have it this card, we need to increment the second value value of the map
-                            duplicate = SetOfSpades.get(arrayOfCards[i][j]);
-                            System.out.println("Current: "+ arrayOfCards[i][j]);
+            switch (arrayOfCards[i][1]){
+                case "S":
+                    if (SetOfSpades.containsKey(arrayOfCards[i][0])){
+                        // we already have it this card, we need to increment the second value value of the map
+                        duplicate = SetOfSpades.get(arrayOfCards[i][0]);
+                        System.out.println("Current: "+ arrayOfCards[i][0]);
                             //System.out.println("Spades cards:"+ SetOfSpades);
                             //System.out.println("Duplicates: "+ duplicate);
-                            duplicate++;
+                        duplicate++;
                             //System.out.println("Duplicates: "+ duplicate);
-                            SetOfSpades.put(arrayOfCards[i][0],duplicate);
-                            System.out.println("Spades cards:"+ SetOfSpades);
+                        SetOfSpades.replace(arrayOfCards[i][0],duplicate);
+                        System.out.println("Spades cards:"+ SetOfSpades);
 
-                        }else{
-                            SetOfSpades.put(arrayOfCards[i][0],1);
-                        }
-                        break;
-                    case "C":
-                        if (SetOfClubs.containsKey(arrayOfCards[i][j])){
-                            // we already have it this card, we need to increment the second value value of the map
-                            duplicate = SetOfClubs.get(arrayOfCards[i][j]);
-                            duplicate++;
-                            SetOfClubs.put(arrayOfCards[i][0],duplicate);
-                        }else{
-                            SetOfClubs.put(arrayOfCards[i][0],1);
-                        }
-                        break;
-                    case "D":
+                    }else{
+                        SetOfSpades.put(arrayOfCards[i][0],1);
+                    }
+                    break;
+                case "C":
+                    if (SetOfClubs.containsKey(arrayOfCards[i][0])){
+                        // we already have it this card, we need to increment the second value value of the map
+                        duplicate = SetOfClubs.get(arrayOfCards[i][0]);
+                        duplicate++;
+                        SetOfClubs.replace(arrayOfCards[i][0],duplicate);
+                    }else{
+                        SetOfClubs.put(arrayOfCards[i][0],1);
+                    }
+                    break;
+                case "D":
                     if (SetOfDiamonds.containsKey(arrayOfCards[i][j])){
                         // we already have it this card, we need to increment the second value value of the map
                         duplicate = SetOfDiamonds.get(arrayOfCards[i][j]);
                         duplicate++;
-                        SetOfDiamonds.put(arrayOfCards[i][0],duplicate);
+                        SetOfDiamonds.replace(arrayOfCards[i][0],duplicate);
                     }else{
                         SetOfDiamonds.put(arrayOfCards[i][0],1);
                     }
-                        break;
-                    case "H":
+                    break;
+                case "H":
                     if (SetOfHearts.containsKey(arrayOfCards[i][j])){
                         // we already have it this card, we need to increment the second value value of the map
                         duplicate = SetOfHearts.get(arrayOfCards[i][j]);
                         duplicate++;
-                        SetOfHearts.put(arrayOfCards[i][0],duplicate);
+                        SetOfHearts.replace(arrayOfCards[i][0],duplicate);
                     }else{
                         SetOfHearts.put(arrayOfCards[i][0],1);
                     }
-                        break;
+                    break;
                 }
- 
-            }
-        }   
+            }   
         if (SetOfSpades.size() == 13 && SetOfClubs.size() == 13 && SetOfDiamonds.size() == 13 && SetOfHearts.size() == 13 ){
             amountOfSets++;
             // We can create at least a set of cards
